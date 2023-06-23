@@ -4,60 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Unidades de Comprimento</title>
+    <title>Document</title>
     <link rel="stylesheet" href="Style/style.css">
-    <script src="script.js" defer></script>
+    <script src="script/script.js" defer></script>
 </head>
-<header>
-    <!-- TITULO PRINCIPAL-->
-    <h1>Conversor de unidade de Comprimento</h1>
-</header>
 
 <body>
-    <!-- DIV PRINCIPAL DO CORPO-->
-    <div class="container">
+    <main>
+        <header>
+            <h1>Conversor de Medidas</h1>
+            <section>
 
+                <form action="">
 
-        <!-- TIPO DE CONVERSOR-->
-        <span>Tipo de conversor</span>
-        <select name="seletorDe" id="seletorDe">
-            <option value="metro">Comprimento</option>
-            <option value="centimetro">peso</option>
-            <option value="polegada">Temperatura</option>
-        </select>
+                    <!-- SELETOR MEDIDA-->
+                    <label for="seletorMedida" >Selecione a unidade de medida:</label> <br>
+                    <select id="seletorMedida">
+                        <option value="selecionar">Selecione</option>
+                        <option value="comprimento">Comprimento</option>
+                        <option value="peso">Peso</option>
+                        <option value="temperatura">Temperatura</option>
+                    </select>
+                    <div>
+                        <input type="text" id="valor">
+                    </div>
 
-        <!-- DIV SELETORES-->
-        <div class="seletores">
+                    <!-- SELETOR DE-->
+                    <div id="seletorOrigem">
+                        <label for="opcaoDe">Converter De:</label>
+                        <select id="opcaoDe"></select>
+                    </div>
 
-            <!-- SELETOR DE-->
-            <span>Converter de:</span>
-            <select name="seletorDe" id="seletorDe">
-                <option value="metro">Metros</option>
-                <option value="centimetro">Centímetros</option>
-                <option value="polegada">Polegadas</option>
-            </select>
+                    <!-- SELETOR PARA-->
+                    <div id="seletorDestino">
+                        <label for="opcaoPara">Converter Para:</label>
+                        <select id="opcaoPara"></select>
+                    </div>
 
-            <!-- SELETOR PARA-->
-            <span>Para:</span>
-            <select name="seletorPara" id="seletorPara">
-                <option value="metro">Metros</option>
-                <option value="centimetro">Centímetros</option>
-                <option value="polegada">Polegadas</option>
-            </select>
-        </div>
-        <!-- CAMPO PARA COLOCAR O VALOR -->
-        <input type="number" id="valor" placeholder="comprimento"> <br>
+                    <!-- BOTÃO CONVERTER-->
+                    <div id="botaoConverter">
+                        <button type="button" class="botaoConverter">Converter</button>
+                    </div>
 
-        <!-- BOTAO-->
-        <button onclick="converter()">CALCULAR</button><br><br>
+                    <!-- CAMPO RESULTADO-->
+                    <div class="resultado" id="resultado">
+                        <label for="resultado">RESULTADO</label><br>
+                        <input type="number" id="campoResultado">
+                    </div>
 
-        <!--DIV RESULTADO-->
-        <output class="resultado" id="resultado">RESULTADO</output>
-
-    </div>
+                </form>
+            </section>
+        </header>
+    </main>
+     
 </body>
-<footer>
-    <P>DIREITOS RESERVADOS</P>
-</footer>
 
 </html>
