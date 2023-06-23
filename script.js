@@ -1,5 +1,4 @@
 var valor = document.getElementById('valor');
-valor.addEventListener('keyup', converter);
 
 var txtResultado = document.getElementById('resultado')
 

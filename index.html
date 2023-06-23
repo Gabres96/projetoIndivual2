@@ -9,37 +9,51 @@
     <script src="script.js" defer></script>
 </head>
 <header>
-    <h1>Conversor de unidade de Comprimento</h1><!-- TITULO PRINCIPAL-->
+    <!-- TITULO PRINCIPAL-->
+    <h1>Conversor de unidade de Comprimento</h1>
 </header>
 
 <body>
+    <!-- DIV PRINCIPAL DO CORPO-->
+    <div class="container">
 
-    <div class="container"><!-- DIV PRINCIPAL DO CORPO-->
 
-        <div class="converter"><!-- DIV PARA CONVERSÃO-->
+        <!-- DIV PARA CONVERSÃO-->
+        <div class="converter">
             <span>Converter de:</span>
 
             <select name="unidade1" id="unidade1">
-                <option value="metro">Metros</option><!--UNIDADE DE COMPRIMENTO-->
-                <option value="centimetro">Centímetros</option><!--UNIDADE DE COMPRIMENTO-->
-                <option value="polegada">Polegadas</option><!--UNIDADE DE COMPRIMENTO-->
+
+                <!--UNIDADE1 METRO-->
+                <option value="metro">Metros</option>
+
+                <!--UNIDADE1 CENTIMETRO-->
+                <option value="centimetro">Centímetros</option>
+
+                <!--UNIDADE1 POLEGADA-->
+                <option value="polegada">Polegadas</option>
             </select>
 
             <span>Para:</span>
             <select name="unidade2" id="unidade2">
-                <option value="metro">Metros</option><!--UNIDADE DE COMPRIMENTO-->
-                <option value="centimetro">Centímetros</option><!--UNIDADE DE COMPRIMENTO-->
-                <option value="polegada">Polegadas</option><!--UNIDADE DE COMPRIMENTO-->
+
+                <!--UNIDADE2 METRO-->
+                <option value="metro">Metros</option>
+
+                <!--UNIDADE2 CENTIMETRO-->
+                <option value="centimetro">Centímetros</option>
+
+                <!--UNIDADE2 POLEGADA-->
+                <option value="polegada">Polegadas</option>
             </select>
         </div>
+        <!-- CAMPO PARA COLOCAR O VALOR -->
+        <input type="number" id="valor" placeholder="comprimento"> <br>
+        <button onclick="converter()">CALCULAR</button><br><br>
 
-        <input type="number" id="valor" placeholder="comprimento"><!-- CAMPO PARA COLOCAR O VALOR -->
+        <!--DIV RESULTADO-->
+        <output class="resultado" id="resultado">RESULTADO</output>
 
-        <div class="resultado" id="resultado"> <!--DIV RESULTADO-->
-            <output>
-                RESULTADO--
-            </output>
-        </div>
     </div>
 </body>
 <footer>
