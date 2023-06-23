@@ -18,37 +18,37 @@
     <div class="container">
 
 
-        <!-- DIV PARA CONVERSÃO-->
-        <div class="converter">
+        <!-- TIPO DE CONVERSOR-->
+        <span>Tipo de conversor</span>
+        <select name="seletorDe" id="seletorDe">
+            <option value="metro">Comprimento</option>
+            <option value="centimetro">peso</option>
+            <option value="polegada">Temperatura</option>
+        </select>
+
+        <!-- DIV SELETORES-->
+        <div class="seletores">
+
+            <!-- SELETOR DE-->
             <span>Converter de:</span>
-
-            <select name="unidade1" id="unidade1">
-
-                <!--UNIDADE1 METRO-->
+            <select name="seletorDe" id="seletorDe">
                 <option value="metro">Metros</option>
-
-                <!--UNIDADE1 CENTIMETRO-->
                 <option value="centimetro">Centímetros</option>
-
-                <!--UNIDADE1 POLEGADA-->
                 <option value="polegada">Polegadas</option>
             </select>
 
+            <!-- SELETOR PARA-->
             <span>Para:</span>
-            <select name="unidade2" id="unidade2">
-
-                <!--UNIDADE2 METRO-->
+            <select name="seletorPara" id="seletorPara">
                 <option value="metro">Metros</option>
-
-                <!--UNIDADE2 CENTIMETRO-->
                 <option value="centimetro">Centímetros</option>
-
-                <!--UNIDADE2 POLEGADA-->
                 <option value="polegada">Polegadas</option>
             </select>
         </div>
         <!-- CAMPO PARA COLOCAR O VALOR -->
         <input type="number" id="valor" placeholder="comprimento"> <br>
+
+        <!-- BOTAO-->
         <button onclick="converter()">CALCULAR</button><br><br>
 
         <!--DIV RESULTADO-->
