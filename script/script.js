@@ -31,72 +31,82 @@ function populateOptions(options) {
     });
 }
 
-var botaoConverter = document.querySelector("botaoConverter");
+var criarBotaoConverter = document.querySelector(".botaoConverter");
 
-botaoConverter.addEventListener("click", function () {
+criarBotaoConverter.addEventListener("click", function () {
     var valor = document.getElementById("valor").value;
-    var seletorMedida = seletorMedida.value;
-    var opcaoDe = opcaoDe.value;
-    var opcaoPara = opcaoPara.value;
+    var seletorMedida = escolherMedida.value;
+    var opcaoDe = escolherOpcaoDe.value;
+    var opcaoPara = escolherOpcaoPara.value;
 
-    var resultado = realizarConversao(valor, seletorMedida, seletorOrigem, seletorDestino);
+    if (valor === "") {
+        alert(document.getElementById("campoResultado").value = "Digite algum valor para ser calculado.")
+    } else {
+        if (seletorMedida === "" || opcaoDe === "" || opcaoPara === "") {
+            alert(document.getElementById("campoResultado").value = "Adicione informações em todos os campos")
+        } else {
+            var resultado = realizarConversao(valor, seletorMedida, seletorOrigem, seletorDestino);
 
-    Document.getElementById("campoResultado").value = resultado;
-})
+            Document.getElementById("campoResultado").value = resultado;
+
+        }
+    }
+
+});
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "enter") {
-        botaoConverter.click();
+        criarBotaoConverter.click();
     }
 })
 
-function realizarConversao(valor, seletorMedida, seletorOrigem, seletorDestino) {
-    if (seletorOrigem === seletorDestino) {
+function realizarConversao(valor, seletorMedida, opcaoDe, opcaoPara) {
+    if (opcaoDe === opcaoPara) {
         return parseFloat(valor);
     }
 
     if (seletorMedida === "comprimento") {
-        if (seletorOrigem === "Metros" && seletorDestino === 'Centímetros') {
+        if (opcaoDe === "Metros" && opcaoPara === 'Centímetros') {
             return (valor * 100).toFixed(2);
-        } else if (seletorOrigem === "Centímetros" && seletorDestino === "Metros") {
+        } else if (opcaoDe === "Centímetros" && opcaoPara === "Metros") {
             return (valor / 100).toFixed(2);
-        } else if (seletorOrigem === "Polegadas" && seletorDestino === "Centímetros") {
+        } else if (opcaoDe === "Polegadas" && opcaoPara === "Centímetros") {
             return (valor * 2.54).toFixed(2);
-        } else if (seletorOrigem === "Metros" && seletorDestino === "Polegadas") {
+        } else if (opcaoDe === "Metros" && opcaoPara === "Polegadas") {
             return (valor / 2.54).toFixed(2);
 
-        } else if (seletorOrigem === "Metros" && seletorDestino === "Polegadas") {
+        } else if (opcaoDe === "Metros" && opcaoPara === "Polegadas") {
             return (valor * 39.37).toFixed(2);
-        } else if (seletorOrigem === "Polegadas" && seletorDestino === "Metros") {
+        } else if (opcaoDe === "Polegadas" && opcaoPara === "Metros") {
             return (valor / 39.37).toFixed(2);
         }
     } else if (seletorMedida === "peso") {
-        if (seletorOrigem === "Quilogramas" && seletorDestino === "Gramas") {
+        if (opcaoDe === "Quilogramas" && opcaoPara === "Gramas") {
             return (valor * 1000).toFixed(2);
-        } else if (seletorOrigem === "Gramas" && seletorDestino === "Quilogramas") {
+        } else if (opcaoDe === "Gramas" && opcaoPara === "Quilogramas") {
             return (valor / 1000).toFixed(2);
-        } else if (seletorOrigem === "Libras" && seletorDestino === "Quilogramas") {
+        } else if (opcaoDe === "Libras" && opcaoPara === "Quilogramas") {
             return (valor * 0.453592).toFixed(2);
-        } else if (seletorOrigem === "Quilogramas" && seletorDestino === "Libras") {
+        } else if (opcaoDe === "Quilogramas" && opcaoPara === "Libras") {
             return (valor * 2.20462).toFixed(2);
 
-        } else if (seletorOrigem === "Gramas" && seletorDestino === "Polegadas") {
+        } else if (opcaoDe === "Gramas" && opcaoPara === "Polegadas") {
             return (valor / 453.592).toFixed(2);
-        } else if (seletorOrigem === "Libras" && seletorDestino === "Gramas") {
+        } else if (opcaoDe === "Libras" && opcaoPara === "Gramas") {
             return (valor * 453.592).toFixed(2);
         }
-    } else if (categoria === "temperatura") {
-        if (seletorOrigem === "Celsius" && seletorDestino === "Fahrenheit") {
+    } else if (seletorMedida === "temperatura") {
+        if (opcaoDe === "Celsius" && opcaoPara === "Fahrenheit") {
             return ((valor * 9 / 5 + 32).toFixed(2));
-        } else if (seletorOrigem === "Fahrenheit" && seletorDestino === "Celsius") {
+        } else if (opcaoDe === "Fahrenheit" && opcaoPara === "Celsius") {
             return (valor / 1000).toFixed(2);
-        } else if (seletorOrigem === "Celsius" && seletorDestino === "Kelvin") {
+        } else if (opcaoDe === "Celsius" && opcaoPara === "Kelvin") {
             return (parseFloat(valor) + 273.15).toFixed(2);
-        } else if (seletorOrigem === "Kelvin" && seletorDestino === "Celsius") {
+        } else if (opcaoDe === "Kelvin" && opcaoPara === "Celsius") {
             return (parseFloat(valor) - 273.15).toFixed(2);
-        } else if (seletorOrigem === "Fahrenheit" && seletorDestino === "Kelvin") {
+        } else if (opcaoDe === "Fahrenheit" && opcaoPara === "Kelvin") {
             return ((parseFloat(valor) + 459.67) * 5 / 9).toFixed(2);
-        } else if (seletorOrigem === "Kelvin" && seletorDestino === "Fahrenheit") {
+        } else if (opcaoDe === "Kelvin" && opcaoPara === "Fahrenheit") {
             return ((parseFloat(valor) * 9 / 5) - 459.67).toFixed(2);
         }
     }

@@ -1,0 +1,22 @@
+.titulo{
+    background-color: yellow;
+}
+
+#seletorMedida{
+    background-color: red;
+}
+#valor{
+    background-color: green;
+}
+#seletorOrigem{
+    background-color: palevioletred;
+}
+#seletorDestino{
+    background-color: blue;
+}
+#botaoConverter{
+    background-color: aqua;
+}
+#resultado{
+    background-color: blueviolet;
+}
