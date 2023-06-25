@@ -10,54 +10,35 @@
 </head>
 
 <body>
-    <main>
-        <header>
-            <h1>Conversor de Medidas</h1>
-            <section>
+    <header>
+        <h1>Conversor de Unidades</h1>
+    </header>
+    <form id="formularioConversor">
+        <select name="escolherMedidas" id="escolherMedidas" required>
+            <option disabled selected hidden>Qual medida você deseja?</option>
+            <option id="comprimento">Comprimento</option>
+            <option id="Peso">Peso</option>
+            <option id="temperatura">Temperatura</option>
+        </select>
 
-                <form action="">
 
-                    <!-- SELETOR MEDIDA-->
-                    <label for="seletorMedida" class="titulo" >Selecione a unidade de medida:</label> <br>
-                    <select id="seletorMedida">
-                        <option value="selecionar">Selecione</option>
-                        <option value="comprimento">Comprimento</option>
-                        <option value="peso">Peso</option>
-                        <option value="temperatura">Temperatura</option>
-                    </select>
-                    <div>
-                        <label for="valor">Digite o valor:</label>br
-                            <textarea id="valor" required></textarea>
-                    </div>
+        <div class="medidas">
+            <select name="valorDe" id="valorDe" required>
+                <option disabled selected>...</option>
+            </select>
 
-                    <!-- SELETOR DE-->
-                    <div id="seletorOrigem">
-                        <label for="opcaoDe">Converter De:</label>
-                        <select id="opcaoDe"></select>
-                    </div>
+            <select name="valorPara" id="valorPara" required>
+                <option disabled selected>...</option>
+            </select>
+        </div>
 
-                    <!-- SELETOR PARA-->
-                    <div id="seletorDestino">
-                        <label for="opcaoPara">Converter Para:</label>
-                        <select id="opcaoPara"></select>
-                    </div>
+        <input type="number" name="valor" id="valor" placeholder="Valor para ser Convertido" required>
 
-                    <!-- BOTÃO CONVERTER-->
-                    <div id="converterBotao">
-                        <button type="button" class="botaoConverter">Converter</button>
-                    </div>
 
-                    <!-- CAMPO RESULTADO-->
-                    <div class="resultado" id="resultado">
-                        <label for="resultado">RESULTADO</label><br>
-                        <input type="number" id="campoResultado">
-                    </div>
+        <button type="submit" id="botaoConverter">Converter</button>
 
-                </form>
-            </section>
-        </header>
-    </main>
-     
+        <div id=valorFinal>Resultado</div>
+    </form>
+
 </body>
-
 </html>
