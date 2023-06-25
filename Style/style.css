@@ -1,13 +1,80 @@
-header{
-    background-color: red;
-    text-align: center;
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0
+    }
+
+body {
+    background: burlywood;
+    
 }
-form{
-    background-color: yellow;
+
+header {
+    background-color: grey;
     text-align: center;
+    border: 3px solid;
+    border-radius: 40px;
+    margin: 40px;
 }
-#escolherMedidas{
-    color: red;
-    margin: 10px;
-    padding: 4px;
+
+form {
+    background-color: grey;;
+    height: 500px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 40px;
+    margin: 50px 400px;
+    
+}
+
+#escolherMedidas {
+    background-color: grey;
+    font-size: x-large;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 40px;
+    border: 2px solid;
+}
+
+.medidas {
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    
+}
+#valorDe{
+    font-size: x-large;
+    border-radius: 40px;
+    border: 2px solid;
+    background-color: grey;
+}
+#valorPara{
+    font-size: x-large;
+    border-radius: 40px;
+    border: 2px solid;
+    background-color: grey;
+}
+#valor{
+    height: 30px;
+    width: 200px;
+    margin: 20px;
+    border-radius: 40px;
+    border: 2px solid;
+    
+}
+#botaoConverter{
+    height: 50px;
+    width: 100px;
+    margin: 20px;
+    border-radius: 40px;
+    border: 2px solid;
+    background-color: grey;
+}
+#valorFinal{
+    font-size: larger;
+    background-color: grey;
+    text-align: center;
 }

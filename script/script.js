@@ -11,7 +11,6 @@ document.getElementById("formularioConversor").addEventListener("submit", functi
     if (valorDe.selectedIndex === 0 || valorPara.selectedIndex === 0) {
         alert("Algum campo não foi preenchido, por gentileza corrija")
     } else {
-        valorFinal.style.color = "white"
         valorFinal.innerText = resultado.toFixed(2)
     }
 })
