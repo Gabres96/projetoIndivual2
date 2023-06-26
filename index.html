@@ -13,6 +13,7 @@
     <header>
         <h1>Conversor de Unidades</h1>
     </header>
+    <!---FORMULARIO CONVERSOR-->
     <form id="formularioConversor">
         <select name="escolherMedidas" id="escolherMedidas" required>
             <option disabled selected hidden>Qual medida você deseja?</option>
@@ -21,7 +22,7 @@
             <option id="temperatura">Temperatura</option>
         </select>
 
-
+        <!---SELETORES DAS MEDIDAS-->
         <div class="medidas">
             <select name="valorDe" id="valorDe" required>
                 <option disabled selected>...</option>
@@ -31,12 +32,12 @@
                 <option disabled selected>...</option>
             </select>
         </div>
-
+        <!---CAMPO ADICIONAR VALOR-->
         <input type="number" name="valor" id="valor" placeholder="Valor para ser Convertido" required><br>
 
-
+        <!---BOTAO PARA CALCULAR-->
         <button type="submit" id="botaoConverter">Converter</button>
-
+        <!---CAMPO VALOR FINAL-->
         <div id=valorFinal>Resultado</div>
     </form>
 

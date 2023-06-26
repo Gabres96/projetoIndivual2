@@ -1,3 +1,4 @@
+/*------------- CRIAR LISTA DE EVENTOS ---------------- */
 document.getElementById("formularioConversor").addEventListener("submit", function (event) {
     event.preventDefault()
 
@@ -6,7 +7,7 @@ document.getElementById("formularioConversor").addEventListener("submit", functi
     var valor = document.getElementById("valor")
 
     var resultado = calculoConversoes(valorDe.value, valorPara.value, valor.value)
-
+    /*------------- ALERTA PARA PREENCHER OS CAMPOS---------------- */
     var valorFinal = document.getElementById("valorFinal")
     if (valorDe.selectedIndex === 0 || valorPara.selectedIndex === 0) {
         alert("Algum campo não foi preenchido, por gentileza corrija")
@@ -14,18 +15,8 @@ document.getElementById("formularioConversor").addEventListener("submit", functi
         valorFinal.innerText = resultado.toFixed(2)
     }
 })
-document.getElementById("escolherMedidas").addEventListener("change", function (event) {
-    event.preventDefault()
 
-    var definir = event.target.value
-
-    var lista = []
-    if (definir == "Comprimento") { lista = ["Metros", "Centimetros", "Polegadas"] }
-    if (definir == "Peso") { lista = ["Quilogramas", "Gramas", "Libras"] }
-    if (definir == "Temperatura") { lista = ["Celsius", "Fahrenheit", "Kelvin"] }
-    opcoesMedidas(lista)
-})
-
+/*-------------FUNCAO CRIAR LISTA ---------------- */
 function opcoesMedidas(lista) {
     valorDe.innerHTML = "<option disabled selected hidden>Qual medida você deseja?</option>"
     for (var i = 0; i < lista.length; i++) {
@@ -49,17 +40,33 @@ function opcoesMedidas(lista) {
     })
 }
 
-function calculoConversoes(valorDe, valorPara, valor) {
+/*-------------CRIAR ITENS DA LISTA---------------- */
+document.getElementById("escolherMedidas").addEventListener("change", function (event) {
+    event.preventDefault()
 
+    var definir = event.target.value
+
+    var lista = []
+    if (definir == "Comprimento") { lista = ["Metros", "Centimetros", "Polegadas"] }
+    if (definir == "Peso") { lista = ["Quilogramas", "Gramas", "Libras"] }
+    if (definir == "Temperatura") { lista = ["Celsius", "Fahrenheit", "Kelvin"] }
+    opcoesMedidas(lista)
+})
+
+
+
+/*-------------FUNCAO CALCULAR MEDIDAS---------------- */
+function calculoConversoes(valorDe, valorPara, valor) {
+    /*-------------CALCULO PESO ---------------- */
     if (valorDe == "Quilogramas") { if (valorPara == "Gramas") { return valor * 1000 } if (valorPara == "Libras") { return valor * 2.20462 } }
     if (valorDe == "Gramas") { if (valorPara == "Quilogramas") { return valor * 0.001 } if (valorPara == "Libras") { return valor * 0.00220462 } }
     if (valorDe == "Libras") { if (valorPara == "Quilogramas") { return valor * 0.453592 } if (valorPara == "Gramas") { return valor * 453.5920000001679 } }
 
-
+    /*-------------CALCULO TEMPERATURA ---------------- */
     if (valorDe == "Celsius") { if (valorPara == "Fahrenheit") { return valor * 1.8 + 32 } if (valorPara == "Kelvin") { return valor * 1 + 273.15 } }
     if (valorDe == "Fahrenheit") { if (valorPara == "Celsius") { return (valor - 32) / 1.8 } if (valorPara == "Kelvin") { return (valor - 32) * 5 / 9 + 273.15 } }
     if (valorDe == "Kelvin") { if (valorPara == "Celsius") { return valor - 273.15 } if (valorPara == "Fahrenheit") { return (valor - 273.15) * 1.8 + 32 } }
-
+    /*-------------CALCULAR COMPRIMENTO---------------- */
     if (valorDe == 'Metros') { if (valorPara == 'Centimetros') { return valor * 100 } if (valorPara == 'Polegadas') { return valor * 39.3701 } }
     if (valorDe == 'Centimetros') { if (valorPara == 'Metros') { return valor * 0.01 } if (valorPara == 'Polegadas') { return valor * 0.393701 } }
     if (valorDe == 'Polegadas') { if (valorPara == 'Metros') { return valor * 0.0254 } if (valorPara == 'Centimetros') { return valor * 2.54 } }

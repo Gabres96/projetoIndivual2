@@ -1,3 +1,5 @@
+
+/*------------RESET CSS ---------------- */
 * {
     padding:0;
     margin:0;
@@ -5,12 +7,12 @@
     list-style:none;
     border:0
     }
-
+/*-------------CORPO ---------------- */
 body {
     background: burlywood;
     
 }
-
+/*-------------CABECALHO---------------- */
 header {
     background-color: grey;
     text-align: center;
@@ -18,7 +20,7 @@ header {
     border-radius: 40px;
     margin: 40px;
 }
-
+/*-------------FORMULARIO---------------- */
 form {
     background-color: grey;;
     height: 500px;
@@ -28,7 +30,7 @@ form {
     margin: 50px 400px;
     
 }
-
+/*-------------ITEM ESCOLHER MEDIDAS ---------------- */
 #escolherMedidas {
     background-color: grey;
     font-size: x-large;
@@ -37,7 +39,7 @@ form {
     border-radius: 40px;
     border: 2px solid;
 }
-
+/*-------------MEDIDAS---------------- */
 .medidas {
     height: 40px;
     display: flex;
@@ -45,18 +47,21 @@ form {
     margin: 50px;
     
 }
+/*-------------EDICAO VALOR DE---------------- */
 #valorDe{
     font-size: x-large;
     border-radius: 40px;
     border: 2px solid;
     background-color: grey;
 }
+/*-------------EDICAO VALOR PARA---------------- */
 #valorPara{
     font-size: x-large;
     border-radius: 40px;
     border: 2px solid;
     background-color: grey;
 }
+/*-------------EDICAO CAMPO VALOR--------------- */
 #valor{
     height: 30px;
     width: 200px;
@@ -65,6 +70,7 @@ form {
     border: 2px solid;
     
 }
+/*-------------EDICAO BOTAO---------------- */
 #botaoConverter{
     height: 50px;
     width: 100px;
@@ -73,6 +79,7 @@ form {
     border: 2px solid;
     background-color: grey;
 }
+/*-------------EDICAO CAMPO---------------- */
 #valorFinal{
     font-size: larger;
     background-color: grey;
